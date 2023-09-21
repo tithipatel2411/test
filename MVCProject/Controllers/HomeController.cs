@@ -17,6 +17,7 @@ namespace MVCProject.Controllers
             //ViewBag.employeesList = employeesList;
 
             ViewData["EmployeeList"] = employeesList;
+            ViewData["EmployeeList"] = employeesList;
 
             ViewBag.ViewBag = "Patel";
             ViewData["Viewdata"] = "Tithi";
