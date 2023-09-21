@@ -1,0 +1,40 @@
+﻿<h1>@TempData["Tempdata"]</h1>
+@{ 
+    TempData.Keep("Tempdata");
+}
+<table  class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Designation</th>
+    </tr>
+    <tbody>
+        @*@foreach (var item in Model)*@
+        @*@foreach (var item in ViewBag.employeesList)*@
+            @foreach (var item in ViewData["EmployeeList"] as List<MVCProject.Models.Employee>)
+            {
+                <tr>
+                    <td>
+                        @item.EmpId
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.designation
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+<ul class="list-group">
+    <li class="list-group-item">
+        <a href="~/Views/Home/SecondPage.cshtml">Your View Bag is <b>@ViewBag.ViewBag</b></a>
+    </li>
+    <li class="list-group-item">
+        <a href="~/Views/Home/SecondPage.cshtml"> Your View Data is <b>@ViewData["Viewdata"]</b></a>
+    </li>
+    <li class="list-group-item">
+        <a href="~/Views/Home/SecondPage.cshtml">Your Temp Data is <b>@TempData["Tempdata"]</b></a>
+</li>
+</ul>
